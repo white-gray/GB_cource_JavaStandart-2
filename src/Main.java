@@ -9,10 +9,10 @@ public class Main {
 
         try {
             System.out.println("Consider the sum of the numeric values of two arrays");
-            System.out.println("First array:");
-            System.out.println("\t the summ of digital values is "+ seeArray(array));
-            System.out.println("Second array:");
-            System.out.println("\t the summ of digital values isа "+ seeArray(array2));
+            System.out.println("\n\nFirst array:");
+            System.out.println("\t the summ of digital values of first array is "+ seeArray(array));
+            System.out.println("\n\nSecond array:");
+            System.out.println("\t the summ of digital values of second array is "+ seeArray(array2));
 
         } catch (MyArraySizeException e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class Main {
             }
         }
         catch (MyArraySizeException e){
-            System.out.println("\n\n\nThis is not array 4x4!\n");
+            System.out.println("\tThis is not array 4x4 !");
         }
 
         int summ =0 , s=0;
@@ -38,17 +38,16 @@ public class Main {
             for (int w=0; w<array[i].length; w++) {
                 try {
                     if (array[i][w] instanceof java.lang.Character) {
-                        System.out.println(" it's CHAR !");
                         s = (Character) array[i][w] - '0';
                         if (s > 9) {throw new MyArrayDataException();}
                     }
                     else if (array[i][w] instanceof java.lang.String) {
-                        System.out.println(" it's STRING !");
                         try {
                             s = Integer.valueOf((String) array[i][w]);
                         }
                         catch (NumberFormatException e){
-                            throw new MyArrayDataException("it's char not digit", e);
+//                            throw new MyArrayDataException("it's char not digit", e);
+                            throw new MyArrayDataException();
                         }
                     }
                     else if (array[i][w] instanceof java.lang.Integer) {
@@ -62,12 +61,10 @@ public class Main {
                 }
                 catch (MyArrayDataException ex){
                     s = 0;
-                    System.out.print("\t\t\ta value " + array[i][w] + " at array["+i+"]["+w+"] is not digit !\n");
+                    System.out.print("\t\t\ta value \"" + array[i][w] + "\" at array["+i+"]["+w+"] is not digit !\n");
                 }
 
-                System.out.println("   s = " + s);
                 summ += s;
-                System.out.println(" summm = " + summ);
 
             }
 
