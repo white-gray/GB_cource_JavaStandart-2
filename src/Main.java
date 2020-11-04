@@ -10,7 +10,9 @@ import java.util.TreeMap;
 public class Main {
     public static void main(String[] args) {
 
-
+/**
+ *   Task 2
+ */
         Map treeMap = new TreeMap();
         treeMap.put("1",55);
         treeMap.put("3",33);
@@ -25,6 +27,9 @@ public class Main {
         printMap(mirrorMap(treeMap));
 
 
+/**
+ *   Task 1
+ */
         new MyWindow();
 
     }
